@@ -6,13 +6,21 @@
         }
         .image_fade {
             position : relative;
-            -webkit-animation: 2s ease 0s normal forwards 1 fadein;
-            animation: 2s ease 0s normal forwards 1 fadein;
+            display: none;
+            -webkit-animation: 1s ease 0s normal forwards 1 fadein;
+            animation: 1s ease 0s normal forwards 1 fadein;
             animation-iteration-count: 1;
         }
         @keyframes fadein{
             0% { opacity:0; }
             100% { opacity:1; }
+        }
+        .rotating_img {
+            -webkit-animation: rotation 0.5s infinite linear;
+        }
+        @-webkit-keyframes rotation {
+            from {-webkit-transform: rotate(0deg);}
+            to   {-webkit-transform: rotate(359deg);}
         }
 
         </style>
@@ -20,12 +28,27 @@
     <body>
         <div id='contents'>
         </div>
+        <div id='images'>
+            <br>
+            <a href="play">
+                <image id='contentsImage' class="image_fade" src="monitor.jpg" />
+            </a>
+        </div>
     </body>
     <script>
-        let text = `2020年09月29日
+        let text = `.         .           .
 
-        クリックを押すとなんの反応もなかった。
-        おい悪魔！何するかよう！
+        画面をクリックしてもなんの反応がなかった。
+
+        おい悪魔！何するんだようおう！
+
+        私は明日、大切なLT資料の作成のタスクがあるんだよぉ！！おい〜
+
+
+        あれ。。
+
+
+        なにか。。。。                 おかしいい。。。
         `
         let count = 0
         let endCount = text.length
@@ -35,7 +58,13 @@
             console.log(count)
             if (endCount === count) {
                 clearInterval(interval)
-                document.getElementById("contents").innerHTML += '<br><a href="play"><image class="image_fade" src="waruiakuma.png" /></a>'
+                document.getElementById("contentsImage").style.display = 'block'
+                setTimeout(() => {
+                    document.getElementById("contentsImage").classList.add('rotating_img')
+                }, 2000)
+                setTimeout(() => {
+                    window.location.href = 'test'
+                }, 4500)
             }
         }, 50)
     </script>
