@@ -30,9 +30,7 @@
         </div>
         <div id='images'>
             <br>
-            <a href="play">
-                <image id='contentsImage' class="image_fade" src="monitor.jpg" />
-            </a>
+            <image id='contentsImage' class="image_fade" src="monitor.jpg" />
         </div>
     </body>
     <script>
@@ -55,7 +53,6 @@
         let interval = setInterval(() => {
             count++
             document.getElementById("contents").innerText = text.slice(0, count)
-            console.log(count)
             if (endCount === count) {
                 clearInterval(interval)
                 document.getElementById("contentsImage").style.display = 'block'
@@ -63,7 +60,7 @@
                     document.getElementById("contentsImage").classList.add('rotating_img')
                 }, 2000)
                 setTimeout(() => {
-                    window.location.href = 'test'
+                    window.location.href = 'start'
                 }, 4500)
             }
         }, 50)

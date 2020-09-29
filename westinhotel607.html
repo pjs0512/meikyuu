@@ -2,10 +2,8 @@
     <head>
         <style>
         .bodyStyle {
-            background-color: #333333;
+            background-color: hsl(0, 0%, 20%);
             color: white;
-        }
-        #contents {
             font-size: 20px;
         }
         #hint {
@@ -33,15 +31,22 @@
         <div id='contents'>
         </div>
         <div id='images'>
-            <br>
-                <image id='contentsImage' class="image_fade" src="mondai1.png" />
+            <br/>
+            <image id='contentsImage' class="image_fade" src="seikai1.png" />
+        </div>
+        <div id='mondaiContents'>
+
+        </div>
+        <div id='mondaiIamges'>
+            <br/>
+            <image id='mondaiImage' class="image_fade" src="mondai2.png" />
         </div>
         <div id="hint" onclick='viewHint()'>
             CLICK[ Hint ]!
             <br/>
             <br/>
             <div id="hint_detail">
-                Hint : アジャイルのScrum開発のプロダクトバックログの見積もりの時にみた気がする。。
+                Hint : A -> Zになる！
             </div>
         </div>
         <div id='description'>
@@ -49,28 +54,19 @@
     </body>
     <script>
         let text = `.          .         .
+        「正解はwest in hotel 607だ！」     
 
-        あれ。。。ここってどこだ？
+        悪魔：ふふっ、これくらいは簡単だ。。         では約束通りページを作ってあげる。
+        `
+        let mondaiText =`
+        「おおおっ、この調子だったらLTの資料を作ることも一瞬だな！ありがとうございます。悪魔さん」
 
-        確かに。。。あのリンクを押した。。
+        悪魔：次は簡単じゃないぞう。。        
+       
+        「でも頑張ってみます！」
 
-        なんかのメールの画像をクリックしたっけ。。。。                             
+        悪魔：資料ぐらい自分で考えて作ってよ     
 
-        悪魔：おい！目が覚めたか？                  
-
-        「あなたはどなたでしょか？」
-
-        悪魔：俺は悪魔だ！実はあなたを助けに来たんだ！                
-
-        「ありがとうございます。助けてください！LTの資料を作っている途中です。」
-
-        悪魔：LTの資料作成を助ける前に条件がある、、、それは.           .             .             俺の問題を解いた後た！！
-        悪魔：解いた分資料を作ってあげる。
-
-        (問題なら自信あるさ！)                         
-        「じゃあーお願いします！」
-
-        悪魔：よし！簡単なものから行く！これでどうだ？
         `
         let text2 = `
         １。問題の答えがわかったら、urlの最後を消してそこに答えを入れてください。
@@ -80,18 +76,29 @@
         ３。英字の場合は全部小文字で入力してください。
         　　ex) TEST -> test、pjs0512.github.io/meikyuu/test
         `
+        let mondaicount = 0;
         let count = 0
         let endCount = text.length
+        let mondaiEndCount = mondaiText.length
         let interval = setInterval(() => {
             count++
             document.getElementById("contents").innerText = text.slice(0, count)
             if (endCount === count) {
                 clearInterval(interval)
                 document.getElementById("contentsImage").style.display = 'block'
-                document.getElementById("hint").style.display = 'block'
-                document.getElementById("description").innerText = text2
+                let mondaiInterval = setInterval(() => {
+                    mondaicount++
+                    document.getElementById("mondaiContents").innerText = mondaiText.slice(0, mondaicount)
+                    if(mondaicount === mondaiEndCount) {
+                        clearInterval(mondaiInterval)
+                        document.getElementById("mondaiImage").style.display = 'block'
+                        document.getElementById("hint").style.display = 'block'
+                        document.getElementById("description").innerText = text2
+                    }
+                },50)
             }
         }, 50)
+        
         const viewHint = () => {
             document.getElementById("hint_detail").style.display="block"
         }
