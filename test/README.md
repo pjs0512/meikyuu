@@ -1,3 +1,0 @@
-# meikyuu
-
-hello im js
