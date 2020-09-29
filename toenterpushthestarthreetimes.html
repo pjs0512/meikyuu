@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <style>
+        .bodyStyle {
+            background-color: hsl(0, 0%, 20%);
+            color: white;
+            font-size: 20px;
+        }
+        #contents {
+            font-size: 20px;
+        }
+        .image_fade {
+            position : relative;
+            display: none;
+            -webkit-animation: 1s ease 0s normal forwards 1 fadein;
+            animation: 1s ease 0s normal forwards 1 fadein;
+            animation-iteration-count: 1;
+        }
+        @keyframes fadein{
+            0% { opacity:0; }
+            100% { opacity:1; }
+        }
+        .rotating_img {
+            -webkit-animation: rotation 0.5s infinite linear;
+        }
+        @-webkit-keyframes rotation {
+            from {-webkit-transform: rotate(0deg);}
+            to   {-webkit-transform: rotate(359deg);}
+        }
+
+        </style>
+    </head>
+    <body class="bodyStyle">
+        <div id='contents'>
+        </div>
+        <div id='images'>
+            <br>
+            <image id='contentsImage' class="image_fade" src="ending.webp" />
+        </div>
+    </body>
+    <script>
+        let text = `.         .           .
+
+        悪魔：まさか解けるとは。          。         。       。         。                  
+
+        「このくらい簡単やねん〜」         
+
+        悪魔：約束通り全部作っておいた確認しな。
+
+        「ラッキー〜、ありがとうございます。悪魔さん。」               
+
+        悪魔：じゃあさらばだ。。           
+
+        （ありがとう。。。悪魔さん。。。）　　　　　　　　　　　　　　　
+
+        「あのう。。。。名前は？？？」               
+
+        悪魔：俺か？俺の名は。。。。        
+
+        「早く言えよ。。。私が消える前に。。。。」                     
+
+        悪魔：パク・・・・                  　　　　　　
+        `
+        let count = 0
+        let endCount = text.length
+        let interval = setInterval(() => {
+            count++
+            document.getElementById("contents").innerText = text.slice(0, count)
+            if (endCount === count) {
+                clearInterval(interval)
+                document.getElementById("contentsImage").style.display = 'block'
+                setTimeout(() => {
+                    document.getElementById("contentsImage").classList.add('rotating_img')
+                }, 2000)
+                setTimeout(() => {
+                    window.location.href = 'superending'
+                }, 5500)
+            }
+        }, 50)
+    </script>
+</html>

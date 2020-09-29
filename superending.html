@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <style>
+        #contents {
+            font-size: 20px;
+        }
+        .image_fade {
+            position : relative;
+            display: none;
+            -webkit-animation: 2s ease 0s normal forwards 1 fadein;
+            animation: 2s ease 0s normal forwards 1 fadein;
+            animation-iteration-count: 1;
+        }
+        @keyframes fadein{
+            0% { opacity:0; }
+            100% { opacity:1; }
+        }
+
+        </style>
+    </head>
+    <body>
+        <div id='contents'>
+        </div>
+        <div id='images'>
+            <br>
+            <a href="play">
+                <image id='contentsImage' class="image_fade" src="waruiakuma.png" />
+            </a>
+        </div>
+    </body>
+    <script>
+        let text = `2020年09月30日
+
+        .             .                 .                   .                これで発表を終了させていただきます。
+        
+        
+        みんな：WOW〜〜、発表、凄かったぜ、頑張ったな〜                   
+
+        「いいえいいえ、とんでもないです。。。」            
+
+        みんな：珍しいな〜〜デレてるし、なんかあったのかい？                      
+
+        「言っても信じないですよ、たぶん。。。」                   
+
+        みんな：え！！なになに、気になるなあ〜〜〜                     
+
+        「二人だけの内緒です。」                       
+
+        みんな：なにかな気になるわ〜               
+
+        （誰も信じられないよねきっと、ねぇ悪魔さん。）                                      
+        
+        
+        Fin.
+
+        `
+        let count = 0
+        let endCount = text.length
+        let interval = setInterval(() => {
+            count++
+            document.getElementById("contents").innerText = text.slice(0, count)
+            if (endCount === count) {
+                clearInterval(interval)
+            }
+        }, 50)
+    </script>
+</html>

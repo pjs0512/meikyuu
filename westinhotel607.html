@@ -32,21 +32,21 @@
         </div>
         <div id='images'>
             <br/>
-            <image id='contentsImage' class="image_fade" src="seikai1.png" />
+            <image id='contentsImage' class="image_fade" src="seikai2.png" />
         </div>
         <div id='mondaiContents'>
 
         </div>
         <div id='mondaiIamges'>
             <br/>
-            <image id='mondaiImage' class="image_fade" src="mondai2.png" />
+            <image id='mondaiImage' class="image_fade" src="mondai3.png" />
         </div>
         <div id="hint" onclick='viewHint()'>
             CLICK[ Hint ]!
             <br/>
             <br/>
             <div id="hint_detail">
-                Hint : A -> Zになる！
+                Hint : 問題を読もうか！「ɒ」って一体なに？
             </div>
         </div>
         <div id='description'>
@@ -54,19 +54,20 @@
     </body>
     <script>
         let text = `.          .         .
-        「正解はwest in hotel 607だ！」     
+        「正解は'west in hotel 607'だ！」     
 
-        悪魔：ふふっ、これくらいは簡単だ。。         では約束通りページを作ってあげる。
+        悪魔：ふふっ、よくわかったな！約束通りページの追加だ！
+
+        「お願いします！」              
         `
         let mondaiText =`
-        「おおおっ、この調子だったらLTの資料を作ることも一瞬だな！ありがとうございます。悪魔さん」
+        悪魔：ではレベルをたくさんたくさーん上げようか
 
-        悪魔：次は簡単じゃないぞう。。        
-       
-        「でも頑張ってみます！」
+        悪魔：今回は特別に2ページ分の問題だ！そのぐらい難しいよ！               
 
-        悪魔：資料ぐらい自分で考えて作ってよ     
+        「お願いします！」
 
+        悪魔：ではいくぞう〜                 
         `
         let text2 = `
         １。問題の答えがわかったら、urlの最後を消してそこに答えを入れてください。
@@ -75,6 +76,9 @@
         　　ex) 6 -> six、pjs0512.github.io/meikyuu/six
         ３。英字の場合は全部小文字で入力してください。
         　　ex) TEST -> test、pjs0512.github.io/meikyuu/test
+        ４。スペースは無くしてください。
+        　　ex) hello world -> helloworld、pjs0512.github.io/meikyuu/helloworld
+ 
         `
         let mondaicount = 0;
         let count = 0

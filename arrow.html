@@ -20,6 +20,10 @@
             animation: 2s ease 0s normal forwards 1 fadein;
             animation-iteration-count: 1;
         }
+        #mondaiImage {
+            width :634px;
+            height: 388px;
+        }
         @keyframes fadein{
             0% { opacity:0; }
             100% { opacity:1; }
@@ -32,21 +36,21 @@
         </div>
         <div id='images'>
             <br/>
-            <image id='contentsImage' class="image_fade" src="seikai1.png" />
+            <image id='contentsImage' class="image_fade" src="seikai4.png" />
         </div>
         <div id='mondaiContents'>
 
         </div>
         <div id='mondaiIamges'>
             <br/>
-            <image id='mondaiImage' class="image_fade" src="mondai2.png" />
+            <image id='mondaiImage' class="image_fade" src="mondai5.png" />
         </div>
         <div id="hint" onclick='viewHint()'>
             CLICK[ Hint ]!
             <br/>
             <br/>
             <div id="hint_detail">
-                Hint : A -> Zになる！
+                Hint : 問題を読もうか！「ɒ」って一体なに？
             </div>
         </div>
         <div id='description'>
@@ -54,19 +58,28 @@
     </body>
     <script>
         let text = `.          .         .
-        「正解は6だ！」     
+        「正解は'arrow'だ！」     
 
-        悪魔：ふふっ、これくらいは簡単だ。。         では約束通りページを作ってあげる。
+        悪魔：正解だ。。                       ここまで来たのは君が初めてだ。。                               
+
+        「こんなのは簡単だぜ〜〜！」                
+
         `
         let mondaiText =`
-        「おおおっ、この調子だったらLTの資料を作ることも一瞬だな！ありがとうございます。悪魔さん」
+        悪魔：では最後の問題だ。     
 
-        悪魔：次は簡単じゃないぞう。。        
-       
-        「でも頑張ってみます！」
+        「はいっ！」                              
 
-        悪魔：資料ぐらい自分で考えて作ってよ     
+        悪魔：これは本当に本当に難しいから、これを解けたら全部作ってあげる                
 
+        「本当ですか？ 」            
+
+        悪魔：そうよ            
+
+        「お願いします！」
+
+        悪魔：いくぜ                      
+                   
         `
         let text2 = `
         １。問題の答えがわかったら、urlの最後を消してそこに答えを入れてください。
